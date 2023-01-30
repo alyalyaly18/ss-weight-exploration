@@ -5,24 +5,24 @@ const INITIAL_FORM_DATA = {
   weight: "",
   planet: "",
 };
+// newWeight{weight: '9', planet: 'mars'}
 
-// Takes in parameter of
-const inputForm = ({ newWeight }) => {
+// The data in input form will be used in calculateWeightOnPlanet
+const InputForm = ({ calculateWeightOnPlanet }) => {
   const [formData, setFormData] = useState(INITIAL_FORM_DATA);
   const handleChange = (e) => {
     console.log(e);
     const newFormData = {
       ...formData,
-      [e.target.planet]: e.target.value,
+      [e.target.name]: e.target.value,
     };
     setFormData(newFormData);
+    console.log(newFormData);
   };
-  // {weight: '9', planet: 'mars'}
 
   const handleInputFormSubmit = (e) => {
-    e.preventDefault(); // why is this needed here? won't it stop submission?
-    // does this mean it needs to have information to submit?
-    newWeight(formData);
+    e.preventDefault(); // prevents a complete reload of page
+    calculateWeightOnPlanet(formData);
     setFormData(INITIAL_FORM_DATA);
   };
 
@@ -36,6 +36,7 @@ const inputForm = ({ newWeight }) => {
         value={formData.weight}
         onChange={handleChange}
       />
+      <br></br>
       <label htmlFor="planet">
         Planet in our Solar System You Want to Visit:
       </label>
@@ -46,13 +47,9 @@ const inputForm = ({ newWeight }) => {
         value={formData.planet}
         onChange={handleChange}
       />
-      <input type="submit" value="Add task" />
+      <input type="submit" value="Calculate" />
     </form>
   );
 };
 
-export default inputForm;
-
-// use task list to help with flow
-// form data is used in the submit/calculate
-//
+export default InputForm;
