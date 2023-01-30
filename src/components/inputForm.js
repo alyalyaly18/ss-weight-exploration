@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Select from "react-select";
 
 const INITIAL_FORM_DATA = {
   weight: "",
@@ -26,6 +27,21 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
     setFormData(INITIAL_FORM_DATA);
   };
 
+  // Dropdown
+  const planets = [
+    { value: "mars", label: "Mars" },
+    { value: "jupiter", label: "Jupiter" },
+  ];
+  const handleDropChange = (selectedPlanet) => {
+    console.log(selectedPlanet.value);
+    const newFormData = {
+      ...formData,
+      planet: selectedPlanet.value,
+    };
+    setFormData(newFormData);
+    console.log(newFormData);
+  };
+
   return (
     <form onSubmit={handleInputFormSubmit}>
       <label htmlFor="weight">Your Weight on Earth:</label>
@@ -40,13 +56,14 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
       <label htmlFor="planet">
         Planet in our Solar System You Want to Visit:
       </label>
-      <input
+      <Select options={planets} onChange={handleDropChange} />
+      {/* <input
         type="text"
         id="planet"
         name="planet"
         value={formData.planet}
         onChange={handleChange}
-      />
+      /> */}
       <input type="submit" value="Calculate" />
     </form>
   );

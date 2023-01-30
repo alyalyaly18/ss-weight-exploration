@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import "./App.css";
+import Select from "react-select";
 import InputForm from "./components/InputForm";
 import earth from "./images/earth.jpeg";
 
@@ -41,6 +41,12 @@ function App() {
       ? "You weigh " + weightDisplay + " on the new planet!"
       : "";
 
+  // Dropdown
+  // const planets = [
+  //   { value: "mars", label: "Mars" },
+  //   { value: "jupiter", label: "Jupiter" },
+  // ];
+
   return (
     <div className="container">
       <header>
@@ -60,6 +66,7 @@ function App() {
           <div>
             <InputForm calculateWeightOnPlanet={weightOnPlanet}></InputForm>
           </div>
+          {/* <Select options={planets} /> */}
           {/* Dropdown menu of planets */}
         </section>
         <section className="weight-display">
