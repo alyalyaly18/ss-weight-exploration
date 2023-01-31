@@ -31,6 +31,11 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
   const planets = [
     { value: "mars", label: "Mars" },
     { value: "jupiter", label: "Jupiter" },
+    { value: "mercury", label: "Mercury" },
+    { value: "neptune", label: "Neptune" },
+    { value: "venus", label: "Venus" },
+    { value: "saturn", label: "Saturn" },
+    { value: "uranus", label: "Uranus" },
   ];
   const handleDropChange = (selectedPlanet) => {
     console.log(selectedPlanet.value);

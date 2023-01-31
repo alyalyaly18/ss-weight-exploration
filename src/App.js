@@ -1,13 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import Select from "react-select";
 import InputForm from "./components/InputForm";
 import earth from "./images/earth.jpeg";
 
 function App() {
   const [weightDisplay, setWeightDisplay] = useState("");
-  const [planetDisplay, setPlanetDisplay] = useState("");
+  // const [planetDisplay, setPlanetDisplay] = useState("");
 
   const API = "https://api.le-systeme-solaire.net/rest/bodies";
 
@@ -40,12 +39,6 @@ function App() {
     weightDisplay !== ""
       ? "You weigh " + weightDisplay + " on the new planet!"
       : "";
-
-  // Dropdown
-  // const planets = [
-  //   { value: "mars", label: "Mars" },
-  //   { value: "jupiter", label: "Jupiter" },
-  // ];
 
   return (
     <div className="container">
