@@ -4,6 +4,8 @@ import { useEffect } from "react";
 import { useRef } from "react";
 
 const Planet = () => {
+  // texture and radius props
+  // tear down canvas and rerender with passed in props
   // how to pass in parameter function from app.js
   // use color as parameter to change sketch
   // const color = calculateWeightOnPlanet.planet;
@@ -33,13 +35,16 @@ const Planet = () => {
       // if (color === "mars") {
       //   p5.fill(255,0,0)
       // }; // Conditional based on passed
+      // p5.texture()
       p5.ellipseMode(p5.CENTER);
-      p5.ellipse(p5.windowWidth / 2, p5.windowHeight / 2, 300);
+      p5.ellipse(400, 400, 100); // use the props as the radius
+      // p5.ellipse(p5.windowWidth / 2, p5.windowHeight / 2, 300);
     };
   };
   useEffect(() => {
+    // will need to return clean-up method
     new p5(sketch, containerRef.current);
-  }, []);
+  }, []); // pass in props to rerender the sketch canvas only when radius and texture are change
 
   return <div ref={containerRef}></div>;
 };

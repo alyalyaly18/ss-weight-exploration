@@ -5,11 +5,12 @@ import InputForm from "./components/InputForm";
 // import earth from "./images/earth.jpeg";
 // import p5 from "p5";
 import Planet from "./components/Planet";
-import Sample from "./components/Sample";
+// import Sample from "./components/Sample";
 
 function App() {
   const [weightDisplay, setWeightDisplay] = useState("");
-  // const [planetDisplay, setPlanetDisplay] = useState("");
+  const [planetDisplay, setPlanetDisplay] = useState("");
+  // newUserInfo.planet -> 'planet prop' -> mapping in Planet
 
   const API = "https://api.le-systeme-solaire.net/rest/bodies";
 
@@ -23,6 +24,7 @@ function App() {
         const currentWeight = newUserInfo.weight;
         const resultWeight = calculateWeight(gravity, currentWeight);
         setWeightDisplay(resultWeight.toFixed(1));
+        setPlanetDisplay(res.data.id);
       })
       .catch((error) => {
         console.log(error);
@@ -58,26 +60,21 @@ function App() {
       <main>
         <section className="sketch-canvas">
           {/* <Sample /> */}
-          <Planet />
-          {/* {myp5} */}
-          {/* <img src={earth} alt="the earth"></img> */}
+          <Planet planet={planetDisplay} />
+          You are on {planetDisplay}!
         </section>
         <section className="directions">
-          Directions go here - will need to toggle.
+          Directions: input your weight in the form below and choose a planet
+          you'd like to visit. Click calculate to see your weight on another
+          world! *Toggle*
         </section>
         <section className="user-input">
-          User input, planet menu and calculate button go here.
           <div>
             <InputForm calculateWeightOnPlanet={weightOnPlanet}></InputForm>
           </div>
           {/* <Select options={planets} /> */}
-          {/* Dropdown menu of planets */}
         </section>
-        <section className="weight-display">
-          {newWeightDisplayVisible}
-          {/* You would weigh {weightDisplay} on the new planet! */}
-        </section>
-        {/* Change new planet to use state */}
+        <section className="weight-display">{newWeightDisplayVisible}</section>
       </main>
     </div>
   );
