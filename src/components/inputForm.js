@@ -9,6 +9,7 @@ const INITIAL_FORM_DATA = {
 // newWeight{weight: '9', planet: 'mars'}
 
 // The data in input form will be used in calculateWeightOnPlanet
+// Need to pass in
 const InputForm = ({ calculateWeightOnPlanet }) => {
   const [formData, setFormData] = useState(INITIAL_FORM_DATA);
   const handleChange = (e) => {
@@ -24,6 +25,7 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
   const handleInputFormSubmit = (e) => {
     e.preventDefault(); // prevents a complete reload of page
     calculateWeightOnPlanet(formData);
+    // needs a function to handle changing p5.js canvas
     setFormData(INITIAL_FORM_DATA);
   };
 
@@ -38,6 +40,10 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
     { value: "uranus", label: "Uranus" },
   ];
   const handleDropChange = (selectedPlanet) => {
+    // Add two calls?
+    // have a function TWO CALL
+    // call handleDropChange
+    // call handleCanvasChange - but how to use Planet component within this?
     console.log(selectedPlanet.value);
     const newFormData = {
       ...formData,

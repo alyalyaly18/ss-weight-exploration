@@ -2,7 +2,10 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import InputForm from "./components/InputForm";
-import earth from "./images/earth.jpeg";
+// import earth from "./images/earth.jpeg";
+// import p5 from "p5";
+import Planet from "./components/Planet";
+import Sample from "./components/Sample";
 
 function App() {
   const [weightDisplay, setWeightDisplay] = useState("");
@@ -19,7 +22,6 @@ function App() {
         const gravity = res.data.gravity;
         const currentWeight = newUserInfo.weight;
         const resultWeight = calculateWeight(gravity, currentWeight);
-        console.log(resultWeight);
         setWeightDisplay(resultWeight.toFixed(1));
       })
       .catch((error) => {
@@ -33,6 +35,12 @@ function App() {
     const newWeight = (currentWeightInt / 9.81) * gravity;
     return newWeight;
   };
+
+  // Helper function to calculate radius of another planet
+  // send information to initial form data in inputform.js
+  // radius used to pass into planet
+  // planet uses radius to render sketch
+  // sketch displayed using return component
 
   // Visibility of result weight
   const newWeightDisplayVisible =
@@ -49,7 +57,10 @@ function App() {
       </header>
       <main>
         <section className="sketch-canvas">
-          <img src={earth} alt="the earth"></img>
+          {/* <Sample /> */}
+          <Planet />
+          {/* {myp5} */}
+          {/* <img src={earth} alt="the earth"></img> */}
         </section>
         <section className="directions">
           Directions go here - will need to toggle.
