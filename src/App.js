@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import InputForm from "./components/InputForm";
-// import earth from "./images/earth.jpeg";
 // import p5 from "p5";
 import Planet from "./components/Planet";
 // import Sample from "./components/Sample";
@@ -16,7 +15,7 @@ function App() {
 
   // newUserInfo = {weight: '9', planet: 'mars'}
   const weightOnPlanet = (newUserInfo) => {
-    // Triggerd by click even in InputForm
+    // Triggerd by click event in InputForm
     axios
       .get(`${API}/${newUserInfo.planet}`)
       .then((res) => {
