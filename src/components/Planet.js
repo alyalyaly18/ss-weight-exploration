@@ -6,6 +6,7 @@ import mars from "../images/mars.jpeg";
 import earth_daymap from "../images/earth_daymap.jpeg";
 
 const Planet = ({ planetDisplay }) => {
+  console.log("render planet:", planetDisplay);
   // texture and radius props (planetDisplay)
   // tear down canvas and rerender with passed in props
   // use color as parameter to change sketch

@@ -13,8 +13,8 @@ body {
   display: grid;
   margin: 0 auto;
   grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr/ 1fr;
-}
-
+} 
+/* 
 header {
   background-color: #000000;
   color: #FFF;
@@ -59,4 +59,4 @@ header {
   align-items: center;
   grid-column: 1;
   grid-row: 9 / 10;
-}
+} */

@@ -69,7 +69,7 @@ function App() {
       </header>
       <main>
         <section className="sketch-canvas">
-          <Planet planet={planetDisplay} />
+          <Planet planetDisplay={planetDisplay} />
         </section>
         <section className="directions">
           Directions: input your weight in the form below and choose a planet
