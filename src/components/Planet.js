@@ -14,7 +14,7 @@ const Planet = ({ planetDisplay }) => {
   const sketch = (p5) => {
     let planetTexture = null;
     p5.preload = () => {
-      console.log(planetDisplay);
+      console.log(planetDisplay); // console's as "undefined"
       if (planetDisplay === "mars") {
         planetTexture = p5.loadImage(mars);
       } else {
@@ -50,10 +50,11 @@ const Planet = ({ planetDisplay }) => {
       p5.texture(planetTexture);
       // should planetDisplay logic being passed down actually be a prop for the img
       // so prop passes directly into texture
-      p5.sphere(100); // use the props as the radius
+      p5.sphere(200); // use the props as the radius
       // p5.ellipse(p5.windowWidth / 2, p5.windowHeight / 2, 300);
     };
   };
+
   // new p5(sketch);
   useEffect(() => {
     // will need to return clean-up method

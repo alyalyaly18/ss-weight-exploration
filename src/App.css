@@ -8,7 +8,55 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-img {
-  width: 500px;
-   height: 500px;
+.container {
+  height: 100vh;
+  display: grid;
+  margin: 0 auto;
+  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr/ 1fr;
+}
+
+header {
+  background-color: #000000;
+  color: #FFF;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  grid-column: 1;
+  grid-row: 1 / 2;
+}
+
+#site-title {
+  font-size: 5vw;
+}
+
+.sketch-canvas {
+  justify-content: space-around;
+  align-items: center;
+  grid-column: 1;
+  grid-row: 3 / 6;
+}
+
+.directions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  grid-column: 1;
+  grid-row: 7 / 8;
+}
+
+.user-input {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  grid-column: 1;
+  grid-row: 8 / 9;
+}
+
+.weight-display {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  grid-column: 1;
+  grid-row: 9 / 10;
 }

@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import "./App.css";
 import InputForm from "./components/InputForm";
-// import p5 from "p5";
+// import mars from "./images/mars.jpeg";
+// import earth_daymap from "./images/earth_daymap.jpeg";
 import Planet from "./components/Planet";
-// import Sample from "./components/Sample";
 
 function App() {
   const [weightDisplay, setWeightDisplay] = useState("");
@@ -50,6 +51,14 @@ function App() {
       : "";
 
   // Planet used for canvas
+  // let planetTexture = null;
+  // console.log(planetDisplay);
+  // if (planetDisplay === "mars") {
+  //   planetTexture = mars;
+  //   console.log(planetTexture);
+  // } else {
+  //   planetTexture = earth_daymap;
+  // }
 
   return (
     <div className="container">
@@ -60,9 +69,7 @@ function App() {
       </header>
       <main>
         <section className="sketch-canvas">
-          {/* <Sample /> */}
           <Planet planet={planetDisplay} />
-          You are on {planetDisplay}!
         </section>
         <section className="directions">
           Directions: input your weight in the form below and choose a planet

@@ -29,7 +29,7 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
     setFormData(INITIAL_FORM_DATA);
   };
 
-  // Dropdown
+  // Dropdown - NEED TO REST DROPDOWN - BUG WHEN INPUTTING SECOND # AFTER CHOICE
   const planets = [
     { value: "mars", label: "Mars" },
     { value: "jupiter", label: "Jupiter" },
