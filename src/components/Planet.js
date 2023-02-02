@@ -4,27 +4,40 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import mars from "../images/mars.jpeg";
 import earth_daymap from "../images/earth_daymap.jpeg";
+import jupiter from "../images/jupiter.jpeg";
+import mercury from "../images/mercury.jpeg";
+import neptune from "../images/neptune.jpeg";
+import saturn from "../images/saturn.jpeg";
+import uranus from "../images/uranus.jpeg";
+import venus_atmosphere from "../images/venus_atmosphere.jpeg";
 
 const Planet = ({ planetDisplay }) => {
   console.log("render planet:", planetDisplay);
-  // texture and radius props (planetDisplay)
   // tear down canvas and rerender with passed in props
-  // use color as parameter to change sketch
-  const containerRef = useRef(); // is a useRef necessary?
+  const containerRef = useRef(); // Read more on why necessary.
 
   const sketch = (p5) => {
     let planetTexture = null;
     p5.preload = () => {
-      console.log(planetDisplay); // console's as "undefined"
+      console.log(planetDisplay);
       if (planetDisplay === "mars") {
         planetTexture = p5.loadImage(mars);
+      } else if (planetDisplay === "jupiter") {
+        planetTexture = p5.loadImage(jupiter);
+      } else if (planetDisplay === "mercure") {
+        planetTexture = p5.loadImage(mercury);
+      } else if (planetDisplay === "neptune") {
+        planetTexture = p5.loadImage(neptune);
+      } else if (planetDisplay === "saturne") {
+        planetTexture = p5.loadImage(saturn);
+      } else if (planetDisplay === "uranus") {
+        planetTexture = p5.loadImage(uranus);
+      } else if (planetDisplay === "venus") {
+        planetTexture = p5.loadImage(venus_atmosphere);
       } else {
         planetTexture = p5.loadImage(earth_daymap);
       }
     };
-    // p5.preload = () => {
-    //   planetTexture = p5.loadImage(mars);
-    // };
 
     p5.setup = () => {
       p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL);
@@ -49,21 +62,15 @@ const Planet = ({ planetDisplay }) => {
       p5.rotateY(p5.frameCount * 0.01);
       p5.noStroke();
       p5.texture(planetTexture);
-      // should planetDisplay logic being passed down actually be a prop for the img
-      // so prop passes directly into texture
       p5.sphere(200); // use the props as the radius
       // p5.ellipse(p5.windowWidth / 2, p5.windowHeight / 2, 300);
     };
   };
 
-  // new p5(sketch);
   useEffect(() => {
-    // will need to return clean-up method
     let inst = new p5(sketch, containerRef.current);
     return () => inst.remove();
   }, [planetDisplay]); // pass in props to rerender the sketch canvas only when radius and texture are changed
-  // issue with wanting sketch passed in but does not work, why?
-  // return <div>{Planet}</div>;
   return <div ref={containerRef}></div>;
 };
 
