@@ -3,6 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
 import mars from "../images/mars.jpeg";
+import earth_daymap from "../images/earth_daymap.jpeg";
 
 const Planet = ({ planetDisplay }) => {
   // texture and radius props (planetDisplay)
@@ -10,18 +11,19 @@ const Planet = ({ planetDisplay }) => {
   // use color as parameter to change sketch
   const containerRef = useRef(); // is a useRef necessary?
 
-  // let planetTexture = "";
-  // if (planetDisplay === "mars") {
-
-  // Helper function for planet texture?
-
   const sketch = (p5) => {
-    let planetTexture;
-    if (planetDisplay === "mars") {
-      p5.preload = () => {
+    let planetTexture = null;
+    p5.preload = () => {
+      console.log(planetDisplay);
+      if (planetDisplay === "mars") {
         planetTexture = p5.loadImage(mars);
-      };
-    }
+      } else {
+        planetTexture = p5.loadImage(earth_daymap);
+      }
+    };
+    // p5.preload = () => {
+    //   planetTexture = p5.loadImage(mars);
+    // };
 
     p5.setup = () => {
       p5.createCanvas(p5.windowWidth, p5.windowHeight, p5.WEBGL);
@@ -43,10 +45,12 @@ const Planet = ({ planetDisplay }) => {
     };
 
     p5.draw = () => {
-      p5.noStroke();
       p5.rotateY(p5.frameCount * 0.01);
+      p5.noStroke();
       p5.texture(planetTexture);
-      p5.ellipse(0, 0, 400); // use the props as the radius
+      // should planetDisplay logic being passed down actually be a prop for the img
+      // so prop passes directly into texture
+      p5.sphere(100); // use the props as the radius
       // p5.ellipse(p5.windowWidth / 2, p5.windowHeight / 2, 300);
     };
   };
@@ -54,15 +58,11 @@ const Planet = ({ planetDisplay }) => {
   useEffect(() => {
     // will need to return clean-up method
     let inst = new p5(sketch, containerRef.current);
-    return () => inst.remove;
-  }, [planetDisplay]); // pass in props to rerender the sketch canvas only when radius and texture are change
+    return () => inst.remove();
+  }, [planetDisplay]); // pass in props to rerender the sketch canvas only when radius and texture are changed
   // issue with wanting sketch passed in but does not work, why?
   // return <div>{Planet}</div>;
   return <div ref={containerRef}></div>;
 };
-
-// p5 Planet Canvas
-// const customPlanet = Planet(100);
-// let myp5 = new p5(customPlanet);
 
 export default Planet;

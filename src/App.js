@@ -49,6 +49,8 @@ function App() {
       ? "You weigh " + weightDisplay + " on the new planet!"
       : "";
 
+  // Planet used for canvas
+
   return (
     <div className="container">
       <header>
