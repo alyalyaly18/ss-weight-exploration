@@ -3,8 +3,6 @@ import { useState } from "react";
 import axios from "axios";
 import "./App.css";
 import InputForm from "./components/InputForm";
-// import mars from "./images/mars.jpeg";
-// import earth_daymap from "./images/earth_daymap.jpeg";
 import Planet from "./components/Planet";
 
 function App() {
@@ -38,27 +36,11 @@ function App() {
     return newWeight;
   };
 
-  // Helper function to calculate radius of another planet
-  // send information to initial form data in inputform.js
-  // radius used to pass into planet
-  // planet uses radius to render sketch
-  // sketch displayed using return component
-
   // Visibility of result weight
   const newWeightDisplayVisible =
     weightDisplay !== ""
       ? "You weigh " + weightDisplay + " on the new planet!"
       : "";
-
-  // Planet used for canvas
-  // let planetTexture = null;
-  // console.log(planetDisplay);
-  // if (planetDisplay === "mars") {
-  //   planetTexture = mars;
-  //   console.log(planetTexture);
-  // } else {
-  //   planetTexture = earth_daymap;
-  // }
 
   return (
     <div className="container">

@@ -6,12 +6,12 @@ const INITIAL_FORM_DATA = {
   weight: "",
   planet: "",
 };
-// newWeight{weight: '9', planet: 'mars'}
 
 // The data in input form will be used in calculateWeightOnPlanet
-// Need to pass in
 const InputForm = ({ calculateWeightOnPlanet }) => {
   const [formData, setFormData] = useState(INITIAL_FORM_DATA);
+  const [value, setValue] = useState("");
+
   const handleChange = (e) => {
     console.log(e);
     const newFormData = {
@@ -25,11 +25,10 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
   const handleInputFormSubmit = (e) => {
     e.preventDefault(); // prevents a complete reload of page
     calculateWeightOnPlanet(formData);
-    // needs a function to handle changing p5.js canvas
     setFormData(INITIAL_FORM_DATA);
   };
 
-  // Dropdown - NEED TO REST DROPDOWN - BUG WHEN INPUTTING SECOND # AFTER CHOICE
+  // Dropdown menu
   const planets = [
     { value: "mars", label: "Mars" },
     { value: "jupiter", label: "Jupiter" },
@@ -39,18 +38,18 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
     { value: "saturn", label: "Saturn" },
     { value: "uranus", label: "Uranus" },
   ];
+  // Helper function to reset dropdown menu
+  const reset = () => {
+    setValue("");
+  };
+
   const handleDropChange = (selectedPlanet) => {
-    // Add two calls?
-    // have a function TWO CALL
-    // call handleDropChange
-    // call handleCanvasChange - but how to use Planet component within this?
-    console.log(selectedPlanet.value);
     const newFormData = {
       ...formData,
       planet: selectedPlanet.value,
     };
     setFormData(newFormData);
-    console.log(newFormData);
+    setValue(selectedPlanet);
   };
 
   return (
@@ -67,15 +66,8 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
       <label htmlFor="planet">
         Planet in our Solar System You Want to Visit:
       </label>
-      <Select options={planets} onChange={handleDropChange} />
-      {/* <input
-        type="text"
-        id="planet"
-        name="planet"
-        value={formData.planet}
-        onChange={handleChange}
-      /> */}
-      <input type="submit" value="Calculate" />
+      <Select options={planets} value={value} onChange={handleDropChange} />
+      <input type="submit" value="Calculate" onClick={reset} />
     </form>
   );
 };
