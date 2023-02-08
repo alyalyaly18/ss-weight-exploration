@@ -9,7 +9,6 @@ import mercury from "../images/mercury.jpeg";
 import neptune from "../images/neptune.jpeg";
 import saturn from "../images/saturn.jpeg";
 import star from "../images/star.png";
-// import meteor from "../images/meteor.webp";
 import uranus from "../images/uranus.jpeg";
 import venus_atmosphere from "../images/venus_atmosphere.jpeg";
 
@@ -20,7 +19,8 @@ const Planet = ({ planetDisplay }) => {
 
   const sketch = (p5) => {
     let planetTexture = null;
-    // let star = null;
+    let starPos = [];
+
     p5.preload = () => {
       console.log(planetDisplay);
 
@@ -45,33 +45,39 @@ const Planet = ({ planetDisplay }) => {
     };
 
     p5.setup = () => {
-      p5.createCanvas(600, 600, p5.WEBGL);
-      p5.imageMode(p5.CENTER);
-      p5.noStroke();
+      p5.createCanvas(960, 540, p5.WEBGL);
       // windowWidth and windowHeight
+
+      p5.colorMode(p5.HSB);
+      p5.angleMode(p5.DEGREES);
+      p5.imageMode(p5.CENTER);
+
+      p5.noStroke();
+
+      // Populate stars array
+      for (let i = 0; i < 1000; i++) {
+        let theta = p5.random(180);
+        let phi = p5.random(360);
+        // spherical coordinates
+        let pos = p5.createVector(
+          1500 * p5.sin(theta) * p5.cos(phi),
+          1500 * p5.cos(theta),
+          1500 * p5.sin(theta) * p5.sin(phi)
+        );
+        let brightness = p5.random(30, 60);
+        starPos.push([pos, brightness]);
+        console.log(starPos);
+      }
     };
 
     p5.draw = () => {
-      // p5.background(0);
       p5.clear();
       p5.orbitControl(4, 4);
 
+      // Distant stars
+      stars();
       // Bright star
-      // theSolar();
-      p5.push();
-      p5.translate(0, 0, -2500);
-      p5.image(star, 0, 0, 1340, 1200);
-      p5.pop();
-
-      // Directional light not working
-      let dx = p5.mouseX - p5.width / 2;
-      let dy = p5.mouseY - p5.height / 2;
-      let v = p5.createVector(dx, dy, 0);
-      v.div(150);
-
-      if (p5.mouseIsPressed === true) {
-        p5.directionalLight(255, 255, 255, v);
-      }
+      theHypergiant();
 
       // Planet
       p5.push();
@@ -82,22 +88,34 @@ const Planet = ({ planetDisplay }) => {
       p5.pop();
     };
 
-    // const theSolar = () => {
-    //   p5.push();
-    //   p5.translate(0, 0, -2500);
-    //   p5.image(star, 0, 0);
-    //   p5.pop();
+    const theHypergiant = () => {
+      p5.push();
+      p5.translate(0, 0, -2500);
+      p5.image(star, 0, 0, 1340, 1200);
+      p5.pop();
 
-    //   // Directional light not working
-    //   let dx = p5.mouseX - p5.width / 2;
-    //   let dy = p5.mouseY - p5.height / 2;
-    //   let v = p5.createVector(dx, dy, 0);
-    //   v.div(150);
+      let dx = p5.mouseX - p5.width / 2;
+      let dy = p5.mouseY - p5.height / 2;
+      let v = p5.createVector(dx, dy, 0);
+      v.div(150);
 
-    //   if (p5.mouseIsPressed === true) {
-    //     p5.directionalLight(255, 255, 255, v);
-    //   }
-    // };
+      if (p5.mouseIsPressed === true) {
+        p5.directionalLight(0, 0, 255, v);
+      }
+    };
+
+    const stars = () => {
+      p5.push();
+      p5.strokeWeight(2);
+
+      p5.beginShape(p5.POINTS);
+      for (let i = 0; i < starPos.length; i++) {
+        p5.stroke(0, 0, starPos[i][1]);
+        p5.vertex(starPos[i][0].x, starPos[i][0].y, starPos[i][0].z);
+      }
+      p5.endShape();
+      p5.pop();
+    };
   };
 
   useEffect(() => {
