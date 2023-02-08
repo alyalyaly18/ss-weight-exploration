@@ -45,7 +45,8 @@ const Planet = ({ planetDisplay }) => {
     };
 
     p5.setup = () => {
-      p5.createCanvas(960, 540, p5.WEBGL);
+      p5.createCanvas(560, 340, p5.WEBGL);
+      // 960, 540
       // windowWidth and windowHeight
 
       p5.colorMode(p5.HSB);
@@ -81,7 +82,7 @@ const Planet = ({ planetDisplay }) => {
 
       // Planet
       p5.push();
-      p5.rotateY(p5.frameCount * 0.01);
+      p5.rotateY(p5.frameCount * 0.1);
       p5.texture(planetTexture);
       p5.sphere(100); // use the props as the radius
       // // p5.ellipse(p5.windowWidth / 2, p5.windowHeight / 2, 300);

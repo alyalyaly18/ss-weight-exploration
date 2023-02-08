@@ -49,20 +49,25 @@ function App() {
         </section>
       </header>
       <main>
-        <section className="sketch-canvas">
+        <div className="sketch-canvas">
           <Planet planetDisplay={planetDisplay} />
-        </section>
-        <section className="directions">
-          Directions: input your weight in the form below and choose a planet
-          you'd like to visit. Click calculate to see your weight on another
-          world! *Toggle*
-        </section>
-        <section className="user-input">
-          <div>
+        </div>
+        <div className="directions-container">
+          <section className="directions">
+            <h1>Directions:</h1>
+            <p>
+              input your weight in the form below and choose a planet you'd like
+              to visit. Click calculate to see your weight on another world!
+              *Toggle*
+            </p>
+          </section>
+          <div className="user-input">
             <InputForm calculateWeightOnPlanet={weightOnPlanet}></InputForm>
           </div>
-        </section>
-        <section className="weight-display">{newWeightDisplayVisible}</section>
+          <section className="weight-display">
+            {newWeightDisplayVisible}
+          </section>
+        </div>
       </main>
     </div>
   );

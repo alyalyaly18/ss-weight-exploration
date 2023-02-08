@@ -9,54 +9,39 @@ body {
 }
 
 .container {
-  height: 100vh;
-  display: grid;
+  /* height: 100vh;
+  display: grid; */
   margin: 0 auto;
-  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr/ 1fr;
-} 
-/* 
+}  
+
 header {
   background-color: #000000;
   color: #FFF;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  grid-column: 1;
-  grid-row: 1 / 2;
 }
-
 #site-title {
-  font-size: 5vw;
+  font-size: 3vw;
 }
 
 .sketch-canvas {
+  display: flex;
+  width: 100%;
+  height: auto;
   justify-content: space-around;
   align-items: center;
-  grid-column: 1;
-  grid-row: 3 / 6;
+}
+.directions-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .directions {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  text-align: center;
-  grid-column: 1;
-  grid-row: 7 / 8;
+  max-width: 760px;
 }
-
 .user-input {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  grid-column: 1;
-  grid-row: 8 / 9;
+  max-width: 760px;
 }
-
-.weight-display {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  grid-column: 1;
-  grid-row: 9 / 10;
-} */
