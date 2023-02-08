@@ -8,7 +8,6 @@ import Planet from "./components/Planet";
 function App() {
   const [weightDisplay, setWeightDisplay] = useState("");
   const [planetDisplay, setPlanetDisplay] = useState("");
-  // newUserInfo.planet -> 'planet prop' -> mapping in Planet
 
   const API = "https://api.le-systeme-solaire.net/rest/bodies";
 
@@ -62,7 +61,6 @@ function App() {
           <div>
             <InputForm calculateWeightOnPlanet={weightOnPlanet}></InputForm>
           </div>
-          {/* <Select options={planets} /> */}
         </section>
         <section className="weight-display">{newWeightDisplayVisible}</section>
       </main>
