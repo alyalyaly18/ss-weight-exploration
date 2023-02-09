@@ -13,7 +13,6 @@ import uranus from "../images/uranus.jpeg";
 import venus_atmosphere from "../images/venus_atmosphere.jpeg";
 
 const Planet = ({ planetDisplay }) => {
-  console.log("render planet:", planetDisplay);
   // tear down canvas and rerender with passed in props
   const containerRef = useRef(); // Read more on why necessary.
 
@@ -22,8 +21,6 @@ const Planet = ({ planetDisplay }) => {
     let starPos = [];
 
     p5.preload = () => {
-      console.log(planetDisplay);
-
       if (planetDisplay === "mars") {
         planetTexture = p5.loadImage(mars);
       } else if (planetDisplay === "jupiter") {
@@ -67,7 +64,7 @@ const Planet = ({ planetDisplay }) => {
         );
         let brightness = p5.random(30, 60);
         starPos.push([pos, brightness]);
-        console.log(starPos);
+        // console.log(starPos);
       }
     };
 

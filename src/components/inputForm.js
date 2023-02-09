@@ -13,7 +13,6 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
   const [value, setValue] = useState("");
 
   const handleChange = (e) => {
-    console.log(e);
     const newFormData = {
       ...formData,
       [e.target.name]: e.target.value,
@@ -46,7 +45,7 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
   const handleDropChange = (selectedPlanet) => {
     const newFormData = {
       ...formData,
-      planet: selectedPlanet.value,
+      planet: selectedPlanet.label,
     };
     setFormData(newFormData);
     setValue(selectedPlanet);
