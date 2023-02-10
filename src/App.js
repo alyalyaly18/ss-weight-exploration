@@ -7,6 +7,7 @@ import Planet from "./components/Planet";
 import { FaWpexplorer } from "react-icons/fa";
 import { IoScaleOutline } from "react-icons/io5";
 import { RxRocket } from "react-icons/rx";
+// import { AiOutlineCopyrightCircle } from "react-icons/ai";
 
 function App() {
   const [weightDisplay, setWeightDisplay] = useState("");
@@ -46,47 +47,56 @@ function App() {
     weightDisplay !== "" ? weightDisplay + " on " + planetName + "!" : "";
 
   return (
-    <div className="container">
-      <header>
-        <section>
-          <h1 id="site-title">Gravity's Pull</h1>
-          <h2 id="site-tagline">Exploring Weight on Other Worlds</h2>
-        </section>
-      </header>
-      <main>
-        <div className="sketch-container">
-          <Planet planetDisplay={planetDisplay} />
-        </div>
-        <div className="info-container">
-          <div className="directions">
-            <h1>
-              <FaWpexplorer />
-            </h1>
-            <p>
-              Enter your weight on Earth (units unnecessary) and choose the
-              planet you'd like to explore. Click "calculate" to determine your
-              mass on another.
-            </p>
-            <p>
-              Observe the surface of the planet using your mouse to move around,
-              zoom in and zoom out of the planet.
-            </p>
+    <div className="background">
+      <div className="container">
+        <header>
+          <section>
+            <span className="font-face-o">
+              <h1 id="site-title">
+                <b>Gravity's Pull</b>
+              </h1>
+              <h2 id="site-tagline">Exploring Weight on Other Worlds</h2>
+            </span>
+          </section>
+        </header>
+        <main>
+          <div className="sketch-container">
+            <Planet planetDisplay={planetDisplay} />
           </div>
-          <div className="user-input">
-            <h1>
-              <RxRocket />
-            </h1>
-            <InputForm calculateWeightOnPlanet={weightOnPlanet}></InputForm>
+          <div className="info-container">
+            <div className="directions">
+              <h1>
+                <FaWpexplorer />
+              </h1>
+              <p>
+                Enter your weight on Earth (units unnecessary) and choose the
+                planet you'd like to explore. Click "calculate" to determine
+                your mass on another.
+              </p>
+              <p>
+                Observe the surface of the planet using your mouse to move
+                around, zoom in and zoom out of the planet.
+              </p>
+            </div>
+            <div className="user-input">
+              <h1>
+                <RxRocket />
+              </h1>
+              <InputForm calculateWeightOnPlanet={weightOnPlanet}></InputForm>
+            </div>
+            <div className="weight-display">
+              <h1>
+                <IoScaleOutline />
+              </h1>
+              <h2>Your weight is...</h2>
+              <h2>{newWeightDisplayVisible}</h2>
+            </div>
           </div>
-          <div className="weight-display">
-            <h1>
-              <IoScaleOutline />
-            </h1>
-            <h2>Your weight is...</h2>
-            <h2>{newWeightDisplayVisible}</h2>
-          </div>
-        </div>
-      </main>
+        </main>
+        <footer>
+          <p>Designed and Created by Alyssa Reyes</p>
+        </footer>
+      </div>
     </div>
   );
 }

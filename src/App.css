@@ -8,6 +8,22 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.background {
+  background-image: 
+  url(
+"./images/Guillaume.jpeg");
+  background-size: "cover";
+  /* height: 100vh; */
+  margin-top: -70px;
+  /* font-size:50px; */
+  background-repeat:no-repeat;
+  background-attachment: fixed; 
+}
+
+.font-face-o {
+  font-family: "Orbitron";
+ }
+
 .container {
   /* height: 100vh;
   display: grid; */
@@ -15,7 +31,7 @@ body {
 }  
 
 header {
-  background-color: #000000;
+  /* background-color: #000000; */
   color: #FFF;
   display: flex;
   justify-content: space-around;
@@ -25,7 +41,7 @@ header {
 
 #site-title {
   text-align: center;
-  font-size: 6vw;
+  font-size: 8vw;
   margin-bottom: -10px;
 }
 
@@ -47,16 +63,27 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #000000;
+  /* background-color: #000000; */
+  padding: 10px;
 }
 
 .info-container > * {
   width: 250px;
   height: 300px;
   background-color: #505050;
+  color: #FFF;
   border: 3px solid #cacaca;
   text-align: center;
 }
+
+footer {
+  text-align: center;
+  font-size: 10px;
+  padding: 10px;
+}
+
+
+
 /* 
 .directions {
 
