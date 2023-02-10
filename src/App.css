@@ -59,6 +59,10 @@ header {
   align-items: center;
   padding: 10px;
 }
+
+.sketch-border {
+  border: 3px solid #55296fb4;
+}
 .info-container {
   display: flex;
   justify-content: space-around;
@@ -76,7 +80,29 @@ header {
   text-align: center;
 }
 
+/* Input form */
+.weight-input {
+  padding: 10px;
+}
+.planet-input {
+  padding: 10px;
+}
+
+.dropdown {
+  color:black;
+}
+
+.calculate {
+  background-color: #FFF;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 15px;
+  border: 1px solid #757575;
+  padding: 10px;
+}
+
 footer {
+  color: #cacaca;
   text-align: center;
   font-size: 10px;
   padding: 10px;

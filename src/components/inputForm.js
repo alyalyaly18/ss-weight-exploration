@@ -53,20 +53,33 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
 
   return (
     <form onSubmit={handleInputFormSubmit}>
-      <label htmlFor="weight">Your Weight on Earth:</label>
+      <div className="weight-input">
+        <label htmlFor="weight">Your Weight on Earth:</label>
+        <input
+          type="text"
+          id="weight"
+          name="weight"
+          value={formData.weight}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="planet-input">
+        <label htmlFor="planet">
+          Planet in our Solar System You Want to Visit:
+        </label>
+        <Select
+          className="dropdown"
+          options={planets}
+          value={value}
+          onChange={handleDropChange}
+        />
+      </div>
       <input
-        type="text"
-        id="weight"
-        name="weight"
-        value={formData.weight}
-        onChange={handleChange}
+        className="calculate"
+        type="submit"
+        value="Calculate"
+        onClick={reset}
       />
-      <br></br>
-      <label htmlFor="planet">
-        Planet in our Solar System You Want to Visit:
-      </label>
-      <Select options={planets} value={value} onChange={handleDropChange} />
-      <input type="submit" value="Calculate" onClick={reset} />
     </form>
   );
 };
