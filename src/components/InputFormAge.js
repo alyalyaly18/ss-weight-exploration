@@ -2,14 +2,15 @@ import React from "react";
 import { useState } from "react";
 import Select from "react-select";
 
-const INITIAL_FORM_DATA = {
-  weight: "",
+const INITIAL_FORM_DATA_AGE = {
+  month: "",
+  day: "",
+  year: "",
   planet: "",
 };
 
-// The data in input form will be used in calculateWeightOnPlanet
-const InputForm = ({ calculateWeightOnPlanet }) => {
-  const [formData, setFormData] = useState(INITIAL_FORM_DATA);
+const InputFormAge = ({ calculateAgeOnPlanet }) => {
+  const [formData, setFormData] = useState(INITIAL_FORM_DATA_AGE);
   const [value, setValue] = useState("");
 
   const handleChange = (e) => {
@@ -22,11 +23,11 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
     console.log(newFormData);
   };
 
-  const handleInputFormSubmit = (e) => {
-    e.preventDefault(); // prevents a complete reload of page
+  const handleInputFormAgeSubmit = (e) => {
+    e.preventDefault();
     console.log(formData);
-    calculateWeightOnPlanet(formData);
-    setFormData(INITIAL_FORM_DATA);
+    calculateAgeOnPlanet(formData);
+    setFormData(INITIAL_FORM_DATA_AGE);
   };
 
   // Dropdown menu
@@ -54,14 +55,30 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
   };
 
   return (
-    <form onSubmit={handleInputFormSubmit}>
-      <div className="weight-input">
-        <label htmlFor="weight">Your Weight on Earth:</label>
+    <form onSubmit={handleInputFormAgeSubmit}>
+      <div className="age-input">
+        <label htmlFor="month">Month:</label>
         <input
           type="text"
-          id="weight"
-          name="weight"
-          value={formData.weight}
+          id="month"
+          name="month"
+          value={formData.month}
+          onChange={handleChange}
+        />
+        <label htmlFor="day">Day:</label>
+        <input
+          type="text"
+          id="day"
+          name="day"
+          value={formData.day}
+          onChange={handleChange}
+        />
+        <label htmlFor="year">Year:</label>
+        <input
+          type="text"
+          id="year"
+          name="year"
+          value={formData.year}
           onChange={handleChange}
         />
       </div>
@@ -86,4 +103,4 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
   );
 };
 
-export default InputForm;
+export default InputFormAge;
