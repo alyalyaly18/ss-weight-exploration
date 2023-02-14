@@ -23,12 +23,13 @@ code {
 }
 
 .nav {
-  background-color: #1b1b1b;
-  height: 100px;
+  /* background-color: #1b1b1b; */
+  background-color: #131313;
+  height: 80px;
   color:#d4d4d4;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   gap: 2rem;
   padding: 0 2rem;
   grid-column: 1 / 5;
@@ -58,9 +59,28 @@ max-inline-size: 50vw;
 }
 
 .nav li.active {
-  background-color: #000000;
+  font-weight: bold;
 }
 
-.nav li:hover {
-  background-color: #543353;
+.nav li {
+  display: inline-block;
+  position: relative;
+}
+
+.nav li:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #eae9d1;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav li:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

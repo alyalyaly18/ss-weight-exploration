@@ -42,7 +42,7 @@ const Planet = ({ planetDisplay }) => {
     };
 
     p5.setup = () => {
-      p5.createCanvas(560, 340, p5.WEBGL);
+      p5.createCanvas(760, 440, p5.WEBGL);
       // 960, 540
       // windowWidth and windowHeight
 
@@ -64,7 +64,6 @@ const Planet = ({ planetDisplay }) => {
         );
         let brightness = p5.random(30, 60);
         starPos.push([pos, brightness]);
-        // console.log(starPos);
       }
     };
 
@@ -81,7 +80,7 @@ const Planet = ({ planetDisplay }) => {
       p5.push();
       p5.rotateY(p5.frameCount * 0.1);
       p5.texture(planetTexture);
-      p5.sphere(100); // use the props as the radius
+      p5.sphere(100);
       // // p5.ellipse(p5.windowWidth / 2, p5.windowHeight / 2, 300);
       p5.pop();
     };
@@ -120,7 +119,7 @@ const Planet = ({ planetDisplay }) => {
     let inst = new p5(sketch, containerRef.current);
     return () => inst.remove();
   }, [planetDisplay]); // pass in props to rerender the sketch canvas only when radius and texture are changed
-  return <div ref={containerRef}></div>;
+  return <div className="ref-container" ref={containerRef}></div>;
 };
 
 export default Planet;

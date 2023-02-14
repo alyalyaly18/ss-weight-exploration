@@ -12,7 +12,7 @@ import { RxRocket } from "react-icons/rx";
 export default function WeightPage() {
   const [weightDisplay, setWeightDisplay] = useState("");
   const [planetDisplay, setPlanetDisplay] = useState("");
-  const [planetName, setPlanetName] = useState("Earth");
+  const [planetName, setPlanetName] = useState("earth");
 
   const API = "https://api.le-systeme-solaire.net/rest/bodies";
 
@@ -60,7 +60,6 @@ export default function WeightPage() {
             <li>Enter your weight on Earth (units do not matter)</li>
             <li>Choose the planet to explore</li>
             <li>Click "calculate"</li>
-            <li>New Zealand</li>
           </ol>
         </div>
         <div className="user-input">
