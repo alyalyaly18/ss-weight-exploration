@@ -2,11 +2,15 @@ export default function Navbar() {
   return (
     <nav className="nav">
       <a href="/" className="site-title">
-        Gravity's Pull
+        <img
+          className="title-img"
+          src="images/spaceheader.png"
+          alt="force of gravity"
+        />
       </a>
       <ul>
-        <CustomLink href="/weight">Explore Weight</CustomLink>
-        <CustomLink href="/age">Explore Age</CustomLink>
+        <CustomLink href="/weight">EXPLORE WEIGHT</CustomLink>
+        <CustomLink href="/age">EXPLORE AGE</CustomLink>
       </ul>
     </nav>
   );

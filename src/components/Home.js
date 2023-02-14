@@ -10,13 +10,13 @@ const Home = () => {
       <div className="sketch-container">
         <Planet planetDisplay={planetDisplay} />
       </div>
-      <div className="info-container">
-        <h2>Did you know Earth's gravity is 9.8 m/s^2?</h2>
-        <p>
-          The force of gravity from planet to planet is very different. This is
-          because planet mass impacts planet gravity. The greater the size of
-          the masess, the greater the size of gravitational force.
-        </p>
+      <div class="hwrap">
+        <div class="hmove">
+          <div class="hitem">What kind of tea can you not have in Space?</div>
+          <div class="hitem">Gravity</div>
+          <div class="hitem">Why is gravity so weak?</div>
+          <div class="hitem">Because it doesn't lift.</div>
+        </div>
       </div>
       <footer className="credits">
         <p>Designed and Created by Alyssa Reyes</p>

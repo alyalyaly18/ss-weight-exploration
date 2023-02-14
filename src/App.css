@@ -1,24 +1,13 @@
-* {
+/* * {
   border: red solid 1px;
-}
+} */
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-/* .nav {
-  background-color: #0c344a;
-  height: 100px;
-  color: rgb(251, 249, 249);
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav a {
-  color: inherit;
-} */
 /* 
 .background {
   background-image: 
@@ -35,12 +24,14 @@ body {
  }
 
 .container {
+  background-image: 
+  url(
+"./images/spacebg.png");
   height: 100vh;
   display: grid;
   margin: 0 auto;
-  grid-template: 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
+  grid-template: 1fr 1fr 1fr 1fr 40px/ 15% repeat(2, 1fr) 15%;
 }  
-
 
 /* PAGES */
 .sketch-container {
@@ -49,14 +40,10 @@ body {
   /* max-height: 600px; */
   justify-content: space-around;
   align-items: center;
-  padding-top: 30px;
   grid-column: 1 / 5;
   grid-row: 1 / 4;
 }
 
-/* .sketch-border {
-  border: 3px solid #55296fb4;
-} */
 .info-container {
   display: flex;
   justify-content: space-around;
@@ -105,3 +92,34 @@ body {
   grid-column: 2 / 4;
   grid-row: 5 / 6;
 }
+
+/* (A) FIXED WRAPPER */
+.hwrap {
+  overflow: hidden; /* HIDE SCROLL BAR */
+  background: #eee;
+  grid-column: 1 / 5;
+  grid-row: 4 / 5;
+}
+ 
+/* (B) MOVING TICKER WRAPPER */
+.hmove { 
+  display: flex; 
+align-items: center;}
+
+/* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+.hitem {
+  flex-shrink: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+ 
+/* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+/* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+@keyframes tickerh {
+  0% { transform: translate3d(100%, 0, 0); }
+  100% { transform: translate3d(-400%, 0, 0); }
+}
+.hmove { animation: tickerh linear 15s infinite; }
+.hmove:hover { animation-play-state: paused; }

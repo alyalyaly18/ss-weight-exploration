@@ -61,6 +61,7 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
           type="text"
           id="weight"
           name="weight"
+          size="15"
           value={formData.weight}
           onChange={handleChange}
         />

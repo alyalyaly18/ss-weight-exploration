@@ -62,6 +62,7 @@ const InputFormAge = ({ calculateAgeOnPlanet }) => {
           type="text"
           id="month"
           name="month"
+          size="5"
           value={formData.month}
           onChange={handleChange}
         />
@@ -70,14 +71,17 @@ const InputFormAge = ({ calculateAgeOnPlanet }) => {
           type="text"
           id="day"
           name="day"
+          size="5"
           value={formData.day}
           onChange={handleChange}
         />
+        <br></br>
         <label htmlFor="year">Year:</label>
         <input
           type="text"
           id="year"
           name="year"
+          size="12"
           value={formData.year}
           onChange={handleChange}
         />

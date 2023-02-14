@@ -23,21 +23,20 @@ code {
 }
 
 .nav {
-  background-color: #9fc2d5;
+  background-color: #1b1b1b;
   height: 100px;
-  color: black;
+  color:#d4d4d4;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  padding: 0 1rem;
+  padding: 0 2rem;
   grid-column: 1 / 5;
   grid-row: 1 / 2;
 }
 
-.site-title {
-  font-size: 5vw;
-  padding: 5px;
+.title-img {
+max-inline-size: 50vw;
 }
 
 .nav ul {
@@ -46,6 +45,7 @@ code {
   list-style: none;
   display: flex;
   gap: 1rem;
+  font-size: 1.5vw;
 }
 
 .nav a {
@@ -55,13 +55,12 @@ code {
   height: 100%;
   align-items: center;
   padding: 10px;
-
 }
 
 .nav li.active {
-  background-color: #d4d4d4;
+  background-color: #000000;
 }
 
 .nav li:hover {
-  background-color: #d3caaf;
+  background-color: #543353;
 }

@@ -82,36 +82,34 @@ export default function AgePage() {
     ageDisplay !== "" ? ageDisplay + " years on " + planetName + "!" : "";
   return (
     <div className="container">
-      <main>
-        <div className="sketch-container">
-          <Planet planetDisplay={planetDisplay} />
+      <div className="sketch-container">
+        <Planet planetDisplay={planetDisplay} />
+      </div>
+      <div className="info-container">
+        <div className="directions">
+          <h1>
+            <FaWpexplorer />
+          </h1>
+          <p>Enter your birthdate on Earth.</p>
+          <p>
+            Observe the surface of the planet using your mouse to move around,
+            zoom in and zoom out of the planet.
+          </p>
         </div>
-        <div className="info-container">
-          <div className="directions">
-            <h1>
-              <FaWpexplorer />
-            </h1>
-            <p>Enter your birthdate on Earth.</p>
-            <p>
-              Observe the surface of the planet using your mouse to move around,
-              zoom in and zoom out of the planet.
-            </p>
-          </div>
-          <div className="user-input">
-            <h1>
-              <RxRocket />
-            </h1>
-            <InputFormAge calculateAgeOnPlanet={ageOnPlanet}></InputFormAge>
-          </div>
-          <div className="weight-display">
-            {/* <h1>
+        <div className="user-input">
+          <h1>
+            <RxRocket />
+          </h1>
+          <InputFormAge calculateAgeOnPlanet={ageOnPlanet}></InputFormAge>
+        </div>
+        <div className="weight-display">
+          {/* <h1>
               <IoScaleOutline />
             </h1> */}
-            <h2>Your age is...</h2>
-            <h2>{newAgeDisplayVisible}</h2>
-          </div>
+          <h2>Your age is...</h2>
+          <h2>{newAgeDisplayVisible}</h2>
         </div>
-      </main>
+      </div>
       <footer className="credits">
         <p>Designed and Created by Alyssa Reyes</p>
       </footer>

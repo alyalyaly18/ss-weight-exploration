@@ -48,44 +48,38 @@ export default function WeightPage() {
 
   return (
     <div className="container">
-      <main>
-        <div className="sketch-container">
-          <Planet planetDisplay={planetDisplay} />
+      <div className="sketch-container">
+        <Planet planetDisplay={planetDisplay} />
+      </div>
+      <div className="info-container">
+        <div className="directions">
+          <h1>
+            <FaWpexplorer />
+          </h1>
+          <ol type="1">
+            <li>Enter your weight on Earth (units do not matter)</li>
+            <li>Choose the planet to explore</li>
+            <li>Click "calculate"</li>
+            <li>New Zealand</li>
+          </ol>
         </div>
-        <div className="info-container">
-          <div className="directions">
-            <h1>
-              <FaWpexplorer />
-            </h1>
-            <p>
-              Enter your weight on Earth (units unnecessary) and choose the
-              planet you'd like to explore. Click "calculate" to determine your
-              mass on another.
-            </p>
-            <p>
-              Observe the surface of the planet using your mouse to move around,
-              zoom in and zoom out of the planet.
-            </p>
-          </div>
-          <div className="user-input">
-            <h1>
-              <RxRocket />
-            </h1>
-            <InputForm calculateWeightOnPlanet={weightOnPlanet}></InputForm>
-          </div>
-          <div className="weight-display">
-            <h1>
-              <IoScaleOutline />
-            </h1>
-            <h2>Your weight is...</h2>
-            <h2>{newWeightDisplayVisible}</h2>
-          </div>
+        <div className="user-input">
+          <h1>
+            <RxRocket />
+          </h1>
+          <InputForm calculateWeightOnPlanet={weightOnPlanet}></InputForm>
         </div>
-      </main>
+        <div className="weight-display">
+          <h1>
+            <IoScaleOutline />
+          </h1>
+          <h2>Your weight is...</h2>
+          <h2>{newWeightDisplayVisible}</h2>
+        </div>
+      </div>
       <footer className="credits">
         <p>Designed and Created by Alyssa Reyes</p>
       </footer>
     </div>
-    // </div>
   );
 }
