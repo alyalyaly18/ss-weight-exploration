@@ -56,11 +56,9 @@ export default function WeightPage() {
           <h1>
             <FaWpexplorer />
           </h1>
-          <ol type="1">
-            <li>Enter your weight on Earth (units do not matter)</li>
-            <li>Choose the planet to explore</li>
-            <li>Click "calculate"</li>
-          </ol>
+          <p>Enter your weight on Earth (units do not matter)</p>
+          <p>+</p>
+          <p>Choose a planet to explore</p>
         </div>
         <div className="user-input">
           <h1>

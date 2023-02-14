@@ -75,7 +75,7 @@ max-inline-size: 50vw;
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #eae9d1;
+  background-color: #cacaca;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }

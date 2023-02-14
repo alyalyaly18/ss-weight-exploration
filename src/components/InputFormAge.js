@@ -66,6 +66,7 @@ const InputFormAge = ({ calculateAgeOnPlanet }) => {
           value={formData.month}
           onChange={handleChange}
         />
+        <br></br>
         <label htmlFor="day">Day:</label>
         <input
           type="text"
@@ -81,15 +82,13 @@ const InputFormAge = ({ calculateAgeOnPlanet }) => {
           type="text"
           id="year"
           name="year"
-          size="12"
+          size="10"
           value={formData.year}
           onChange={handleChange}
         />
       </div>
       <div className="planet-input">
-        <label htmlFor="planet">
-          Planet in our Solar System You Want to Visit:
-        </label>
+        <label htmlFor="planet">Planet:</label>
         <Select
           className="dropdown"
           options={planets}

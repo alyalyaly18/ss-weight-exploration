@@ -10,14 +10,14 @@ const Home = () => {
       <div className="sketch-container">
         <Planet planetDisplay={planetDisplay} />
       </div>
-      {/* <div class="hwrap">
+      <div class="hwrap">
         <div class="hmove">
-          <div class="hitem">What kind of tea can you not have in Space?</div>
-          <div class="hitem">Gravity</div>
-          <div class="hitem">Why is gravity so weak?</div>
-          <div class="hitem">Because it doesn't lift.</div>
+          <div class="hitem">EXPLORE MORE</div>
+          <div class="hitem">EXPLORE MORE</div>
+          <div class="hitem">EXPLORE MORE</div>
+          <div class="hitem">EXPLORE MORE</div>
         </div>
-      </div> */}
+      </div>
       <footer className="credits">
         <p>Designed and Created by Alyssa Reyes</p>
       </footer>

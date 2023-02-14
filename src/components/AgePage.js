@@ -6,6 +6,7 @@ import InputFormAge from "./InputFormAge";
 import Planet from "./Planet";
 import { RxRocket } from "react-icons/rx";
 import { FaWpexplorer } from "react-icons/fa";
+import { IoCalendarOutline } from "react-icons/io5";
 
 export default function AgePage() {
   const [ageDisplay, setAgeDisplay] = useState("");
@@ -86,15 +87,14 @@ export default function AgePage() {
         <Planet planetDisplay={planetDisplay} />
       </div>
       <div className="info-container">
-        <div className="directions">
+        <div className="age-directions">
           <h1>
             <FaWpexplorer />
           </h1>
-          <p>Enter your birthdate on Earth.</p>
-          <p>
-            Observe the surface of the planet using your mouse to move around,
-            zoom in and zoom out of the planet.
-          </p>
+          <p>Enter your birthdate on Earth in the format:</p>
+          <p>MM / DD / YYYY</p>
+          <p>+</p>
+          <p>Choose a planet to explore</p>
         </div>
         <div className="user-input">
           <h1>
@@ -103,9 +103,9 @@ export default function AgePage() {
           <InputFormAge calculateAgeOnPlanet={ageOnPlanet}></InputFormAge>
         </div>
         <div className="weight-display">
-          {/* <h1>
-              <IoScaleOutline />
-            </h1> */}
+          <h1>
+            <IoCalendarOutline />
+          </h1>
           <h2>Your age is...</h2>
           <h2>{newAgeDisplayVisible}</h2>
         </div>

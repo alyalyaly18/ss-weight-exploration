@@ -67,9 +67,7 @@ const InputForm = ({ calculateWeightOnPlanet }) => {
         />
       </div>
       <div className="planet-input">
-        <label htmlFor="planet">
-          Planet in our Solar System You Want to Visit:
-        </label>
+        <label htmlFor="planet">Planet:</label>
         <Select
           className="dropdown"
           options={planets}
