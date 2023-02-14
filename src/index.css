@@ -24,15 +24,18 @@ code {
 
 .nav {
   background-color: #9fc2d5;
+  height: 100px;
   color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
   padding: 0 1rem;
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
 }
 
-.new-site-title {
+.site-title {
   font-size: 5vw;
   padding: 5px;
 }

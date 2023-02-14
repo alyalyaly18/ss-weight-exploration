@@ -1,6 +1,6 @@
-/* * {
+* {
   border: red solid 1px;
-} */
+}
 
 body {
   margin: 0;
@@ -8,21 +8,22 @@ body {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.nav {
-  background-color: #9fc2d5;
-  color: black;
+/* .nav {
+  background-color: #0c344a;
+  height: 100px;
+  color: rgb(251, 249, 249);
   display: flex;
   justify-content: space-between;
 }
 
 .nav a {
   color: inherit;
-}
-
-/* .background {
+} */
+/* 
+.background {
   background-image: 
   url(
-"./images/Guillaume.jpeg");
+"./images/spaceBackground.jpeg");
   background-size: "cover";
   margin-top: -70px;
   background-repeat:no-repeat;
@@ -34,51 +35,35 @@ body {
  }
 
 .container {
-  /* height: 100vh;
-  display: grid; */
+  height: 100vh;
+  display: grid;
   margin: 0 auto;
+  grid-template: 1fr 1fr 1fr 1fr 1fr/ 1fr 1fr 1fr 1fr;
 }  
 
-header {
-  /* background-color: #000000; */
-  color: #FFF;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-}
-/* 
-#site-title {
-  text-align: center;
-  font-size: 8vw;
-  margin-bottom: -10px;
-}
 
-#site-tagline {
-  text-align: center;
-  font-size: 3vw;
-} */
-
-/* Weight Page */
+/* PAGES */
 .sketch-container {
   display: flex;
   width: 100%;
-  /* height: auto; */
-  max-height: 600px;
+  /* max-height: 600px; */
   justify-content: space-around;
   align-items: center;
-  padding: 10px;
+  padding-top: 30px;
+  grid-column: 1 / 5;
+  grid-row: 1 / 4;
 }
 
-.sketch-border {
+/* .sketch-border {
   border: 3px solid #55296fb4;
-}
+} */
 .info-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  /* background-color: #000000; */
   padding: 10px;
+  grid-column: 2 / 4;
+  grid-row: 4 / 5;
 }
 
 .info-container > * {
@@ -88,6 +73,7 @@ header {
   color: #FFF;
   border: 3px solid #cacaca;
   text-align: center;
+  
 }
 
 /* Input form */
@@ -111,9 +97,11 @@ header {
   padding: 10px;
 }
 
-footer {
+.credits {
   color: #cacaca;
   text-align: center;
   font-size: 10px;
   padding: 10px;
+  grid-column: 2 / 4;
+  grid-row: 5 / 6;
 }

@@ -47,18 +47,7 @@ export default function WeightPage() {
     weightDisplay !== "" ? weightDisplay + " on " + planetName + "!" : "";
 
   return (
-    // <div className="background">
     <div className="container">
-      {/* <header>
-          <section>
-            <span className="font-face-o">
-              <h1 id="site-title">
-                <b>Gravity's Pull</b>
-              </h1>
-              <h2 id="site-tagline">Exploring Weight on Other Worlds</h2>
-            </span>
-          </section>
-        </header> */}
       <main>
         <div className="sketch-container">
           <Planet planetDisplay={planetDisplay} />
@@ -93,7 +82,7 @@ export default function WeightPage() {
           </div>
         </div>
       </main>
-      <footer>
+      <footer className="credits">
         <p>Designed and Created by Alyssa Reyes</p>
       </footer>
     </div>

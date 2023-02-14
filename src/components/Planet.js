@@ -120,11 +120,7 @@ const Planet = ({ planetDisplay }) => {
     let inst = new p5(sketch, containerRef.current);
     return () => inst.remove();
   }, [planetDisplay]); // pass in props to rerender the sketch canvas only when radius and texture are changed
-  return (
-    <div className="sketch-border">
-      <div ref={containerRef}></div>
-    </div>
-  );
+  return <div ref={containerRef}></div>;
 };
 
 export default Planet;

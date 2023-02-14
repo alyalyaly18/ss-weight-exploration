@@ -112,6 +112,9 @@ export default function AgePage() {
           </div>
         </div>
       </main>
+      <footer className="credits">
+        <p>Designed and Created by Alyssa Reyes</p>
+      </footer>
     </div>
   );
 }
